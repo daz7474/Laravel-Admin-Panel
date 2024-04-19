@@ -24,7 +24,13 @@ class UpdateCompanyRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('companies')->ignore($this->company)],
+            'email' => [
+                'required',
+                'string',
+                'email',
+                'max:255',
+                Rule::unique('companies')->ignore($this->company->id)
+            ],
             'logo' => 'nullable|image|dimensions:min_width=100,min_height=100',
             'website' => 'nullable|url',
         ];
