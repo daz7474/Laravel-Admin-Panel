@@ -72,7 +72,7 @@
                 <input class="form-control"
                 name="phone"
                 id="phone"
-                type="number"
+                type="text"
                 >
 
                 @error('phone')
