@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h1>Employees</h1>
-    <a href="{{ route('employees.create') }}" class="btn btn-primary my-4">Add New Employee</a>
+    <a href="{{ route('employees.create') }}" class="btn btn-primary my-4">+ Add New Employee</a>
     <table class="table">
         <thead>
             <tr>
@@ -15,7 +15,7 @@
         </thead>
         <tbody>
             @foreach ($employees as $employee)
-            <tr>
+            <tr class="align-middle">
                 <td>{{ "$employee->first_name $employee->last_name" }}</td>
                 <td>{{ $employee->email }}</td>
                 <td><a href="/companies">{{ $employee->company->name }}</a></td>
