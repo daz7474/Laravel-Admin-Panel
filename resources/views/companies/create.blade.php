@@ -15,6 +15,7 @@
                 name="name"
                 id="name"
                 type="text"
+                required
                 >
 
                 @error('name')

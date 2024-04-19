@@ -17,6 +17,7 @@
                 id="name"
                 type="text"
                 value="{{ old('name', $company->name) }}"
+                required
                 >
 
                 @error('name')
