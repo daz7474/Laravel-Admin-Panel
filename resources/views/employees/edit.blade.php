@@ -17,6 +17,7 @@
                 id="first_name"
                 value="{{ old('first_name', $employee->first_name) }}"
                 type="text"
+                required
                 >
 
                 @error('first_name')
@@ -32,6 +33,7 @@
                 id="last_name"
                 value="{{ old('last_name', $employee->last_name) }}"
                 type="text"
+                required
                 >
 
                 @error('last_name')

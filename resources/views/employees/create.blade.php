@@ -15,6 +15,7 @@
                 name="first_name"
                 id="first_name"
                 type="text"
+                required
                 >
 
                 @error('first_name')
@@ -29,6 +30,7 @@
                 name="last_name"
                 id="last_name"
                 type="text"
+                required
                 >
 
                 @error('last_name')
