@@ -69,7 +69,7 @@
             </div>
         </nav>
 
-        <div class="container d-flex">
+        <div class="container d-flex justify-content-center">
             @if (session('success'))
                 <div class="alert alert-success">
                     {{ session('success') }}
