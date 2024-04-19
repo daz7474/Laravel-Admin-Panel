@@ -49,11 +49,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/companies">Companies
-                                    </a>
+                                    <a class="dropdown-item {{ request()->is('companies*') ? 'active' : '' }}" href="/companies">Companies</a>
 
-                                    <a class="dropdown-item" href="/employees">Employees
-                                    </a>
+                                    <a class="dropdown-item {{ request()->is('employees*') ? 'active' : '' }}" href="/employees">Employees</a>
                                     
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -70,6 +68,20 @@
                 </div>
             </div>
         </nav>
+
+        <div class="container d-flex">
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            @if (session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
+        </div>
 
         <main class="py-4">
             @yield('content')
