@@ -78,7 +78,7 @@
                 name="phone"
                 id="phone"
                 value="{{ old('phone', $employee->phone) }}"
-                type="number"
+                type="text"
                 >
 
                 @error('phone')
