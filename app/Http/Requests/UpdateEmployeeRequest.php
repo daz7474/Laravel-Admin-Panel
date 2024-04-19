@@ -26,7 +26,13 @@ class UpdateEmployeeRequest extends FormRequest
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'company_id' => 'required|exists:companies,id',
-            'email' => ['nullable', 'string', 'email', 'max:255', Rule::unique('employees')->ignore($this->employee)],
+            'email' => [
+                'nullable',
+                'string',
+                'email',
+                'max:255',
+                Rule::unique('employees')->ignore($this->employee->id)
+            ],
             'phone' => 'nullable|string|max:255',
         ];
     }
