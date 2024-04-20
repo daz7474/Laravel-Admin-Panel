@@ -44,7 +44,7 @@ php artisan serve
 Navigate to `http://localhost:8000` to access the Laravel Company Admin Panel.
 
 # Login
-Log in with existing credentials to access the dashboard and start managing companies and employees.
+Log in with existing admin credentials created using migrate to access the dashboard and start managing companies and employees.
 
 ## About Laravel
 
