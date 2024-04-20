@@ -9,8 +9,6 @@
 
 # Laravel Company Admin Panel
 
-## Installation
-
 # Install PHP dependencies
 composer install
 
