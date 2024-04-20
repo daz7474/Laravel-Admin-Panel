@@ -12,7 +12,9 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Role</th>
+                @admin
                 <th>Actions</th>
+                @endadmin
             </tr>
         </thead>
         <tbody>
@@ -22,8 +24,6 @@
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->role }}</td>
                 <td>
-                    <a href="/users/{{ $user->id }}" class="btn btn-warning">View</a>
-
                     @admin
                     <a href="{{ route('users.edit', $user) }}" class="btn btn-info">Edit</a>
                     <form action="{{ route('users.destroy', $user) }}" method="POST" style="display: inline-block;">
