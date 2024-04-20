@@ -35,8 +35,9 @@
 
         <div class="col-4 d-flex flex-column justify-content-center align-items-center">
           <h2>Company</h2>
-          <a href="/companies/{{ $employee->company_id }}">
+          <a class="text-center" href="/companies/{{ $employee->company_id }}">
             <img src="{{ asset('storage/' . $employee->company->logo) }}" width="150" height="80" alt="Company Logo" class="rounded my-2">
+            <h2>{{ $employee->company->name }}</h2>
           </a>
         </div>
         
