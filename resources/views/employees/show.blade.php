@@ -3,6 +3,7 @@
 @section('content')
 
 <div class="container">
+    <h1>Employee Details</h1>
     <div class="card my-3">
       <div class="card-header">
         <h2 class="m-0">{{ "$employee->first_name $employee->last_name" }}</h2>
@@ -22,15 +23,13 @@
           </thead>
           <tbody>
               <tr class="align-middle">
-                  <td><img src="https://i.pravatar.cc/60?u={{ $employee->email }}" alt="Avatar" width="60" height="60" class="rounded-circle"></td>
+                  <td><img src="https://i.pravatar.cc/150?u={{ $employee->email }}" alt="Avatar" width="150" height="150" class="rounded-circle"></td>
                   <td>{{ $employee->email }}</td>
                   <td>{{ $employee->phone }}</td>
-                  <td class="d-flex flex-column align-items-center">
-                    <img src="{{ asset('storage/' . $employee->company->logo) }}" width="100" height="60" alt="Company Logo" class="rounded my-2">
-                    {{ $employee->company->name }}
+                  <td>
+                    <img src="{{ asset('storage/' . $employee->company->logo) }}" width="100" height="60" alt="{{ $employee->company->name }}" class="rounded my-2">
                   </td>
                   <td>
-                      <a href="/employees/{{ $employee->id }}" class="btn btn-warning mb-2">View</a>
   
                       @admin
                       <a href="{{ route('employees.edit', $employee) }}" class="btn btn-info mb-2">Edit</a>
