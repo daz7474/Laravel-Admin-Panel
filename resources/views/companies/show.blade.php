@@ -60,7 +60,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($company->employees as $employee)
+          @forelse ($company->employees as $employee)
             <tr class="align-middle">
                 <td><img src="https://i.pravatar.cc/60?u={{ $employee->email }}" alt="Avatar" width="60" height="60" class="rounded-circle"></td>
                 <td>{{ "$employee->first_name $employee->last_name" }}</td>
@@ -80,7 +80,13 @@
                     @endadmin
                 </td>
             </tr>
-            @endforeach
+            @empty
+              <tr>
+                  <td colspan="6" class="text-center">
+                    This company has no employees.
+                  </td>
+              </tr>
+            @endforelse
         </tbody>
       </table>
     </div>
