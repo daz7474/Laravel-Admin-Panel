@@ -7,6 +7,7 @@
     <table class="table">
         <thead>
             <tr>
+                <th>Avatar</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Company</th>
@@ -16,6 +17,7 @@
         <tbody>
             @foreach ($employees as $employee)
             <tr class="align-middle">
+                <td><img src="https://i.pravatar.cc/60?u={{ $employee->email }}" alt="Avatar" width="60" height="60" class="rounded-circle"></td>
                 <td>{{ "$employee->first_name $employee->last_name" }}</td>
                 <td>{{ $employee->email }}</td>
                 <td><a href="/companies">{{ $employee->company->name }}</a></td>
