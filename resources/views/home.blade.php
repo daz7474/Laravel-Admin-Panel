@@ -15,19 +15,17 @@
 
                 <div class="card-body card-body-custom">
                     <div class="card-container">
-                        <div class="card-container">
-                            <a class="btn btn-primary p-3 m-2" href="/users">
-                                View All Users
-                            </a>
+                        <a class="btn btn-primary p-3 m-2" href="/users">
+                            View All Users
+                        </a>
 
-                            <a class="btn btn-primary p-3 m-2" href="/companies">
-                                View All Companies
-                            </a>
+                        <a class="btn btn-primary p-3 m-2" href="/companies">
+                            View All Companies
+                        </a>
 
-                            <a class="btn btn-primary p-3 m-2" href="/employees">
-                                View All Employees
-                            </a>
-                        </div>
+                        <a class="btn btn-primary p-3 m-2" href="/employees">
+                            View All Employees
+                        </a>
                     </div>
                 </div>
 
