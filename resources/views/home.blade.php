@@ -13,7 +13,7 @@
             <div class="card mb-4">
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
-                <div class="card-body">
+                <div class="card-body card-body-custom">
                     <div class="card-container">
                         <div class="card-container">
                             <a class="btn btn-primary p-3 m-2" href="/users">
@@ -39,7 +39,7 @@
             <div class="card mb-4">
                 <div class="card-header">{{ __('Featured Companies') }}</div>
 
-                <div class="card-body">
+                <div class="card-body card-body-custom">
                     <div class="card-container">
                         @foreach ($companies as $company)
                             <div class="text-center pb-3 m-2">
@@ -57,7 +57,7 @@
             <div class="card mb-4">
                 <div class="card-header">{{ __('Featured Employees') }}</div>
 
-                <div class="card-body">
+                <div class="card-body card-body-custom">
                     <div class="card-container">
                         @foreach ($employees as $employee)
                             <div class="text-center pb-3 m-2">
