@@ -20,7 +20,7 @@
                 <td>{{ $company->name }}</td>
                 <td>{{ $company->email }}</td>
                 <td>
-                    <img src="{{ asset('storage/logos/' . $company->logo) }}" width="100" alt="Company Logo" class="rounded">
+                    <img src="{{ asset('storage/' . $company->logo) }}" width="100" alt="Company Logo" class="rounded">
                 </td>
                 <td>
                     <a href="{{ route('companies.edit', $company) }}" class="btn btn-info">Edit</a>
