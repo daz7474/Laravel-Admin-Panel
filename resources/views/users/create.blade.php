@@ -51,6 +51,20 @@
               @enderror
           </div>
 
+          {{-- Confirm Password --}}
+          <div class="form-group mb-3">
+            <label class="mb-2" for="password_confirmation">Confirm Password: </label>
+            <input class="form-control"
+            name="password_confirmation"
+            id="password_confirmation"
+            type="password"
+            >
+
+            @error('password_confirmation')
+                <p class="text-danger">{{ $message }}</p>
+            @enderror
+        </div>
+
             {{-- Role --}}
             <div class="form-group mb-3">
                 <label class="mb-2" for="role">Role: </label>
