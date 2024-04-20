@@ -24,7 +24,7 @@
                                 <div class="border-bottom pb-3 mb-3">
                                     <h4>{{ $company->name }}</h4>
                                     <h5>{{ $company->email }}</h5>
-                                    <img src="{{ asset('storage/' . $company->logo) }}" width="250" alt="Company Logo" class="rounded">
+                                    <img src="{{ asset('storage/' . $company->logo) }}" width="250" height="100" alt="Company Logo" class="rounded">
                                 </div>
                             @endforeach
                             </div>
