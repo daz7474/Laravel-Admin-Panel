@@ -14,31 +14,31 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6 d-flex flex-column align-items-center">
-                            <h2 class="mb-3">Featured Companies</h2>
-                            <a class="btn btn-primary p-3" href="/companies">
+                            <a class="btn btn-primary p-3 my-3" href="/companies">
                                 View All Companies
                             </a>
-
-                            <div class="text-center mt-5">
+                            
+                            <div class="text-center mt-3">
+                                <h2>Featured Companies</h2>
                             @foreach ($companies as $company)
-                                <div class="border-bottom pb-3 mb-3">
+                                <div class="border-bottom pb-3 my-3">
+                                    <img src="{{ asset('storage/' . $company->logo) }}" width="150" height="80" alt="Company Logo" class="rounded">
                                     <h4>{{ $company->name }}</h4>
                                     <h5>{{ $company->email }}</h5>
-                                    <img src="{{ asset('storage/' . $company->logo) }}" width="150" height="80" alt="Company Logo" class="rounded">
                                 </div>
                             @endforeach
                             </div>
                         </div>
 
                         <div class="col-md-6 d-flex flex-column align-items-center">
-                            <h2 class="mb-3">Featured Employees</h2>
-                            <a class="btn btn-primary p-3" href="/employees">
+                            <a class="btn btn-primary p-3 my-3" href="/employees">
                                 View All Employees
                             </a>
 
-                            <div class="text-center mt-5">
+                            <div class="text-center mt-3">
+                                <h2>Featured Employees</h2>
                                 @foreach ($employees as $employee)
-                                <div class="border-bottom pb-3 mb-3">
+                                <div class="border-bottom pb-3 my-3">
                                     <img src="https://i.pravatar.cc/60?u={{ $employee->email }}" alt="Avatar" width="60" height="60" class="rounded-circle mb-3">
                                     <h4>{{ "$employee->first_name $employee->last_name" }}</h4>
                                     <h5>{{ $employee->email }}</h5>
