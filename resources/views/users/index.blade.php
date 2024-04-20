@@ -7,7 +7,7 @@
     <a href="{{ route('users.create') }}" class="btn btn-primary my-4">+ Add New User</a>
     @endadmin
     <div class="table-responsive">
-        <table class="table text-center">
+        <table class="table">
             <thead>
                 <tr>
                     <th>Name</th>

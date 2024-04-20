@@ -7,7 +7,7 @@
     <a href="{{ route('employees.create') }}" class="btn btn-primary my-4">+ Add New Employee</a>
     @endadmin
     <div class="table-responsive">
-        <table class="table text-center">
+        <table class="table">
             <thead>
                 <tr>
                     <th>Avatar</th>
