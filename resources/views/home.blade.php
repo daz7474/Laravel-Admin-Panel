@@ -8,40 +8,21 @@
                 Welcome {{ auth()->user()->name }}!
             </h2>
 
-            <div class="card">
+            {{-- Dashboard --}}
+
+            <div class="card mb-4">
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-6 d-flex flex-column align-items-center">
-                            <div class="text-center mt-3">
-                                <h2>Featured Companies</h2>
-                            @foreach ($companies as $company)
-                                <div class="border-bottom pb-3 my-5">
-                                    <a href="{{ route('companies.show', $company) }}">
-                                        <img src="{{ asset('storage/' . $company->logo) }}" width="150" height="80" alt="Company Logo" class="rounded">
-                                    </a>
-                                </div>
-                            @endforeach
-                            </div>
+                        <div class="d-flex justify-content-around">
+                            <a class="btn btn-primary p-3 mt-auto" href="/users">
+                                View All Users
+                            </a>
 
                             <a class="btn btn-primary p-3 mt-auto" href="/companies">
                                 View All Companies
                             </a>
-                        </div>
-
-                        <div class="col-md-6 d-flex flex-column align-items-center">
-                            <div class="text-center mt-3">
-                                <h2>Featured Employees</h2>
-                                @foreach ($employees as $employee)
-                                <div class="border-bottom pb-3 my-3">
-                                    <a href="/employees/{{ $employee->id }}">
-                                        <img src="https://i.pravatar.cc/60?u={{ $employee->email }}" alt="Avatar" width="60" height="60" class="rounded-circle mb-3">
-                                        <h4>{{ "$employee->first_name $employee->last_name" }}</h4>
-                                    </a>
-                                </div>
-                                @endforeach
-                            </div>
 
                             <a class="btn btn-primary p-3 mt-auto" href="/employees">
                                 View All Employees
@@ -50,6 +31,44 @@
                     </div>
                 </div>
 
+            </div>
+
+            {{-- Featured --}}
+
+            {{-- Companies --}}
+            <div class="card mb-4">
+                <div class="card-header">{{ __('Featured Companies') }}</div>
+
+                <div class="card-body">
+                    <div class="d-flex flex-column align-items-center">
+                        @foreach ($companies as $company)
+                            <div class="text-center border-bottom pb-3 my-3">
+                                <a href="{{ route('companies.show', $company) }}">
+                                    <img src="{{ asset('storage/' . $company->logo) }}" width="250" alt="Company Logo" class="rounded mb-4">
+                                    <h4>{{ $company->name }}</h4>
+                                </a>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+
+            {{-- Employees --}}
+            <div class="card mb-4">
+                <div class="card-header">{{ __('Featured Employees') }}</div>
+
+                <div class="card-body">
+                    <div class="d-flex flex-column align-items-center">
+                        @foreach ($employees as $employee)
+                            <div class="text-center border-bottom pb-3 my-3">
+                                <a href="{{ route('employees.show', $employee) }}">
+                                    <img src="https://i.pravatar.cc/100?u={{ $employee->email }}" width="100" alt="Employee Avatar" class="rounded-circle mb-4">
+                                    <h4>{{ $employee->first_name }}</h4>
+                                </a>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
             </div>
 
         </div>
