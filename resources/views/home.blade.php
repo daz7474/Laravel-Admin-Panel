@@ -39,6 +39,7 @@
                             <div class="text-center mt-5">
                                 @foreach ($employees as $employee)
                                 <div class="border-bottom pb-3 mb-3">
+                                    <img src="https://i.pravatar.cc/60?u={{ $employee->email }}" alt="Avatar" width="60" height="60" class="rounded-circle mb-3">
                                     <h4>{{ "$employee->first_name $employee->last_name" }}</h4>
                                     <h5>{{ $employee->email }}</h5>
                                 </div>
