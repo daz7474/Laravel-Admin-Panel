@@ -29,6 +29,8 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password')
         ]);
 
+        User::factory(8)->create();
+
         // Create 5 companies
         $companies = Company::factory(5)->create();
 
