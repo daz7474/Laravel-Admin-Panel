@@ -25,7 +25,7 @@
                             @endforeach
                             </div>
 
-                            <a class="btn btn-primary p-3 my-3" href="/companies">
+                            <a class="btn btn-primary p-3 mt-auto" href="/companies">
                                 View All Companies
                             </a>
                         </div>
@@ -42,7 +42,7 @@
                                 @endforeach
                             </div>
 
-                            <a class="btn btn-primary p-3 my-3" href="/employees">
+                            <a class="btn btn-primary p-3 mt-auto" href="/employees">
                                 View All Employees
                             </a>
                         </div>
