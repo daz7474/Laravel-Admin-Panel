@@ -66,12 +66,15 @@
               <td>{{ $employee->company->name }}</td>
               <td>
                   <a href="/employees/{{ $employee->id }}" class="btn btn-warning">View</a>
+
+                  @admin
                   <a href="{{ route('employees.edit', $employee) }}" class="btn btn-info">Edit</a>
                   <form action="{{ route('employees.destroy', $employee) }}" method="POST" style="display: inline-block;">
                       @csrf
                       @method('DELETE')
                       <button type="submit" class="btn btn-danger" onclick="return confirm('This action is permanent. Are you sure?')">Delete</button>
                   </form>
+                  @endadmin
               </td>
           </tr>
           @endforeach
