@@ -4,12 +4,13 @@
 <div class="container">
     <h1>Employees</h1>
     <a href="{{ route('employees.create') }}" class="btn btn-primary my-4">+ Add New Employee</a>
-    <table class="table">
+    <table class="table text-center">
         <thead>
             <tr>
                 <th>Avatar</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Phone Number</th>
                 <th>Company</th>
                 <th>Actions</th>
             </tr>
@@ -18,10 +19,12 @@
             @foreach ($employees as $employee)
             <tr class="align-middle">
                 <td><img src="https://i.pravatar.cc/60?u={{ $employee->email }}" alt="Avatar" width="60" height="60" class="rounded-circle"></td>
-                <td><a href="/employees/{{ $employee->id }}">{{ "$employee->first_name $employee->last_name" }}</a></td>
+                <td>{{ "$employee->first_name $employee->last_name" }}</td>
                 <td>{{ $employee->email }}</td>
+                <td>{{ $employee->phone }}</td>
                 <td><a href="{{ route('companies.show', $employee->company_id) }}">{{ $employee->company->name }}</a></td>
                 <td>
+                    <a href="/employees/{{ $employee->id }}" class="btn btn-warning">View</a>
                     <a href="{{ route('employees.edit', $employee) }}" class="btn btn-info">Edit</a>
                     <form action="{{ route('employees.destroy', $employee) }}" method="POST" style="display: inline-block;">
                         @csrf
