@@ -14,10 +14,6 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6 d-flex flex-column align-items-center">
-                            <a class="btn btn-primary p-3 my-3" href="/companies">
-                                View All Companies
-                            </a>
-                            
                             <div class="text-center mt-3">
                                 <h2>Featured Companies</h2>
                             @foreach ($companies as $company)
@@ -28,13 +24,13 @@
                                 </div>
                             @endforeach
                             </div>
+
+                            <a class="btn btn-primary p-3 my-3" href="/companies">
+                                View All Companies
+                            </a>
                         </div>
 
                         <div class="col-md-6 d-flex flex-column align-items-center">
-                            <a class="btn btn-primary p-3 my-3" href="/employees">
-                                View All Employees
-                            </a>
-
                             <div class="text-center mt-3">
                                 <h2>Featured Employees</h2>
                                 @foreach ($employees as $employee)
@@ -43,9 +39,12 @@
                                     <h4>{{ "$employee->first_name $employee->last_name" }}</h4>
                                     <h5>{{ $employee->email }}</h5>
                                 </div>
-                                    
                                 @endforeach
                             </div>
+
+                            <a class="btn btn-primary p-3 my-3" href="/employees">
+                                View All Employees
+                            </a>
                         </div>
                     </div>
                 </div>
