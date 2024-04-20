@@ -18,9 +18,9 @@
             @foreach ($employees as $employee)
             <tr class="align-middle">
                 <td><img src="https://i.pravatar.cc/60?u={{ $employee->email }}" alt="Avatar" width="60" height="60" class="rounded-circle"></td>
-                <td>{{ "$employee->first_name $employee->last_name" }}</td>
+                <td><a href="/employees/{{ $employee->id }}">{{ "$employee->first_name $employee->last_name" }}</a></td>
                 <td>{{ $employee->email }}</td>
-                <td><a href="/companies">{{ $employee->company->name }}</a></td>
+                <td><a href="{{ route('companies.show', $employee->company_id) }}">{{ $employee->company->name }}</a></td>
                 <td>
                     <a href="{{ route('employees.edit', $employee) }}" class="btn btn-info">Edit</a>
                     <form action="{{ route('employees.destroy', $employee) }}" method="POST" style="display: inline-block;">
