@@ -36,7 +36,7 @@
                                 @csrf
                                 @method('DELETE')
                                 
-                                <button type="submit" class="btn btn-danger" onclick="return confirm('This will delete all employees associated with this company, continue?')">Delete</button>
+                                <button type="submit" class="btn btn-danger mb-2" onclick="return confirm('This will delete all employees associated with this company, continue?')">Delete</button>
                             </form>
                         @endadmin
                     </td>
