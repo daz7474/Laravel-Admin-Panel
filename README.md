@@ -10,10 +10,14 @@
 # Laravel Company Admin Panel
 
 # Install PHP dependencies
+```bash
 composer install
+```
 
 # Install JavaScript dependencies
+```bash
 npm install
+```
 
 # Generate Application Key
 Generate a new application key:
