@@ -18,7 +18,9 @@
                                 <h2>Featured Companies</h2>
                             @foreach ($companies as $company)
                                 <div class="border-bottom pb-3 my-5">
-                                    <img src="{{ asset('storage/' . $company->logo) }}" width="150" height="80" alt="Company Logo" class="rounded">
+                                    <a href="{{ route('companies.show', $company) }}">
+                                        <img src="{{ asset('storage/' . $company->logo) }}" width="150" height="80" alt="Company Logo" class="rounded">
+                                    </a>
                                 </div>
                             @endforeach
                             </div>
@@ -33,8 +35,10 @@
                                 <h2>Featured Employees</h2>
                                 @foreach ($employees as $employee)
                                 <div class="border-bottom pb-3 my-3">
-                                    <img src="https://i.pravatar.cc/60?u={{ $employee->email }}" alt="Avatar" width="60" height="60" class="rounded-circle mb-3">
-                                    <h4>{{ "$employee->first_name $employee->last_name" }}</h4>
+                                    <a href="/employees/{{ $employee->id }}">
+                                        <img src="https://i.pravatar.cc/60?u={{ $employee->email }}" alt="Avatar" width="60" height="60" class="rounded-circle mb-3">
+                                        <h4>{{ "$employee->first_name $employee->last_name" }}</h4>
+                                    </a>
                                 </div>
                                 @endforeach
                             </div>
