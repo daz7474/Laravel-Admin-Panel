@@ -30,6 +30,7 @@
                 name="email"
                 id="email"
                 type="email"
+                required
                 >
 
                 @error('email')
@@ -44,6 +45,7 @@
               name="password"
               id="password"
               type="password"
+              required
               >
 
               @error('password')
@@ -58,6 +60,7 @@
             name="password_confirmation"
             id="password_confirmation"
             type="password"
+            required
             >
 
             @error('password_confirmation')
