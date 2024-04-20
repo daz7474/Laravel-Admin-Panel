@@ -23,6 +23,8 @@
             <td>{{ $company->email }}</td>
             <td><a href="{{ $company->website }}" target="_blank">{{ $company->website }}</a></td>
             <td>
+
+              @admin
               <div>
                 <a href="{{ route('companies.edit', $company) }}" class="btn btn-info">Edit</a>
                 <form action="{{ route('companies.destroy', $company) }}" method="POST" style="display: inline-block;">
@@ -32,6 +34,7 @@
                 <button type="submit" class="btn btn-danger" onclick="return confirm('This will delete all employees associated with this company, continue?')">Delete</button>
                 </form>
               </div>
+              @endadmin
             </td>
         </tr>
       </tbody>

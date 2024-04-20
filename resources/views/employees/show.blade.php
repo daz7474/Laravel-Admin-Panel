@@ -20,6 +20,7 @@
           <p>Phone Number: {{ $employee->phone }}</p>
           
 
+          @admin
           <div>
             <a href="{{ route('employees.edit', $employee) }}" class="btn btn-info">Edit</a>
             <form action="{{ route('employees.destroy', $employee) }}" method="POST" style="display: inline-block;">
@@ -29,6 +30,7 @@
             <button type="submit" class="btn btn-danger" onclick="return confirm('This action is permanent. Are you sure?')">Delete</button>
             </form>
           </div>
+          @endadmin
         </div>
 
         <div class="col-4 d-flex flex-column justify-content-center align-items-center">

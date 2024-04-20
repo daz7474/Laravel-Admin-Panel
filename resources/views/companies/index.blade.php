@@ -4,7 +4,9 @@
 
 <div class="container">
     <h1>Companies</h1>
+    @admin
     <a href="{{ route('companies.create') }}" class="btn btn-primary my-4">+ Add New Company</a>
+    @endadmin
     <table class="table text-center">
         <thead>
             <tr>
