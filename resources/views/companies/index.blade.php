@@ -17,7 +17,7 @@
         <tbody>
             @foreach ($companies as $company)
             <tr class="align-middle">
-                <td>{{ $company->name }}</td>
+                <td><a href="{{ route('companies.show', $company) }}">{{ $company->name }}</a></td>
                 <td>{{ $company->email }}</td>
                 <td>
                     <img src="{{ asset('storage/' . $company->logo) }}" width="100" height="60" alt="Company Logo" class="rounded my-2">
