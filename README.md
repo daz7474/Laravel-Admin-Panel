@@ -7,6 +7,43 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+# Laravel Company Admin Panel
+
+## Installation
+
+# Install PHP dependencies
+composer install
+
+# Install JavaScript dependencies
+npm install
+
+# Generate Application Key
+Generate a new application key:
+
+```bash
+php artisan key:generate
+```
+
+# Run Migrations
+Run database migrations to create the tables:
+
+```bash
+php artisan migrate
+```
+
+# Start the Application
+Start the Laravel development server:
+
+```bash
+php artisan serve
+```
+
+# Access the Application
+Navigate to `http://localhost:8000` to access the Laravel Company Admin Panel.
+
+# Login
+Log in with existing credentials to access the dashboard and start managing companies and employees.
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
