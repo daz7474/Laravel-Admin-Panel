@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreUserRequest extends FormRequest
@@ -11,7 +12,7 @@ class StoreUserRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return Gate::allows('admin');
     }
 
     /**
@@ -25,7 +26,7 @@ class StoreUserRequest extends FormRequest
             'role' => 'required|string|max:255',
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|string|max:255'
+            'password' => 'required|string|min:8|max:255|confirmed'
         ];
     }
 }
