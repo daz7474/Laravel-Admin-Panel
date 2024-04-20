@@ -8,22 +8,34 @@
       <h1 class="m-0">{{ $company->name }}</h1>
     </div>
 
-    <div class="card-body d-flex justify-content-between align-items-center">
-      <img src="{{ asset('storage/' . $company->logo) }}" width="150" height="100" alt="Company Logo" class="rounded my-2">
-
-      <p>{{ $company->email }}</p>
-      <p><a href="{{ $company->website }}" target="_blank">{{ $company->website }}</a></p>
-  
-      <div>
-        <a href="{{ route('companies.edit', $company) }}" class="btn btn-info">Edit</a>
-        <form action="{{ route('companies.destroy', $company) }}" method="POST" style="display: inline-block;">
-        @csrf
-        @method('DELETE')
-  
-        <button type="submit" class="btn btn-danger" onclick="return confirm('This will delete all employees associated with this company, continue?')">Delete</button>
-        </form>
-      </div>
-    </div>
+    <table class="table text-center">
+      <thead>
+        <tr>
+            <th>Logo</th>
+            <th>Email</th>
+            <th>Website</th>
+            <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="align-middle">
+            <td><img src="{{ asset('storage/' . $company->logo) }}" width="150" height="100" alt="Company Logo" class="rounded my-2"></td>
+            <td>{{ $company->email }}</td>
+            <td><a href="{{ $company->website }}" target="_blank">{{ $company->website }}</a></td>
+            <td>
+              <div>
+                <a href="{{ route('companies.edit', $company) }}" class="btn btn-info">Edit</a>
+                <form action="{{ route('companies.destroy', $company) }}" method="POST" style="display: inline-block;">
+                @csrf
+                @method('DELETE')
+          
+                <button type="submit" class="btn btn-danger" onclick="return confirm('This will delete all employees associated with this company, continue?')">Delete</button>
+                </form>
+              </div>
+            </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <div class="card my-3">
