@@ -3,46 +3,48 @@
 @section('content')
 
 <div class="container">
-  <div class="card">
-    <div class="card-header">
-      <h1 class="m-0">Employee ID #{{ $employee->id }}</h1>
-    </div>
-
-    <div class="card-body">
-      <div class="row">
-        <div class="col-4 d-flex flex-column justify-content-center align-items-center">
-          <img src="https://i.pravatar.cc/250?u={{ $employee->email }}" alt="Avatar" width="250" height="250" class="rounded-circle">
-        </div>
-
-        <div class="col-4 d-flex flex-column justify-content-center align-items-center">
-          <h2>{{ "$employee->first_name $employee->last_name" }}</h2>
-          <p>Email: {{ $employee->email }}</p>
-          <p>Phone Number: {{ $employee->phone }}</p>
-          
-
-          @admin
-          <div>
-            <a href="{{ route('employees.edit', $employee) }}" class="btn btn-info">Edit</a>
-            <form action="{{ route('employees.destroy', $employee) }}" method="POST" style="display: inline-block;">
-            @csrf
-            @method('DELETE')
-
-            <button type="submit" class="btn btn-danger" onclick="return confirm('This action is permanent. Are you sure?')">Delete</button>
-            </form>
-          </div>
-          @endadmin
-        </div>
-
-        <div class="col-4 d-flex flex-column justify-content-center align-items-center">
-          <h2>Company</h2>
-          <a class="text-center" href="/companies/{{ $employee->company_id }}">
-            <img src="{{ asset('storage/' . $employee->company->logo) }}" width="150" height="80" alt="Company Logo" class="rounded my-2">
-            <h2>{{ $employee->company->name }}</h2>
-          </a>
-        </div>
-        
+    <div class="card my-3">
+      <div class="card-header">
+        <h2 class="m-0">{{ "$employee->first_name $employee->last_name" }}</h2>
+      </div>
+      <div class="table-responsive">
+        <table class="table text-center">
+          <thead>
+              <tr>
+                  <th>Avatar</th>
+                  <th>Email</th>
+                  <th>Phone Number</th>
+                  <th>Company</th>
+                  @admin
+                  <th>Actions</th>
+                  @endadmin
+              </tr>
+          </thead>
+          <tbody>
+              <tr class="align-middle">
+                  <td><img src="https://i.pravatar.cc/60?u={{ $employee->email }}" alt="Avatar" width="60" height="60" class="rounded-circle"></td>
+                  <td>{{ $employee->email }}</td>
+                  <td>{{ $employee->phone }}</td>
+                  <td class="d-flex flex-column align-items-center">
+                    <img src="{{ asset('storage/' . $employee->company->logo) }}" width="100" height="60" alt="Company Logo" class="rounded my-2">
+                    {{ $employee->company->name }}
+                  </td>
+                  <td>
+                      <a href="/employees/{{ $employee->id }}" class="btn btn-warning mb-2">View</a>
+  
+                      @admin
+                      <a href="{{ route('employees.edit', $employee) }}" class="btn btn-info mb-2">Edit</a>
+                      <form action="{{ route('employees.destroy', $employee) }}" method="POST" style="display: inline-block;">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" class="btn btn-danger mb-2" onclick="return confirm('This action is permanent. Are you sure?')">Delete</button>
+                      </form>
+                      @endadmin
+                  </td>
+              </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-  </div>
 </div>
 @endsection
