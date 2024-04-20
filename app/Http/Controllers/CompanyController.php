@@ -62,13 +62,21 @@ class CompanyController extends Controller
     public function update(UpdateCompanyRequest $request, Company $company)
     {
         $data = $request->validated();
+
         if ($request->hasFile('logo') && $request->file('logo')->isValid()) {
+            // Delete old logo if exists
+            if ($company->logo) {
+                Storage::delete('public/' . $company->logo);
+            }
+            
+            // Store new logo and update
             $data['logo'] = $request->logo->store('logos', 'public');
         }
 
         $company->update($data);
         return redirect()->route('companies.index')->with('success', 'Company updated successfully.');
     }
+
 
     /**
      * Remove the specified resource from storage.
