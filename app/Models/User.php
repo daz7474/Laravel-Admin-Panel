@@ -44,4 +44,12 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public static function roles()
+    {
+        return [
+            'admin' => 'Admin',
+            'user' => 'User',
+        ];
+    }
 }
