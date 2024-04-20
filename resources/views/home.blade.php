@@ -17,10 +17,8 @@
                             <div class="text-center mt-3">
                                 <h2>Featured Companies</h2>
                             @foreach ($companies as $company)
-                                <div class="border-bottom pb-3 my-3">
+                                <div class="border-bottom pb-3 my-5">
                                     <img src="{{ asset('storage/' . $company->logo) }}" width="150" height="80" alt="Company Logo" class="rounded">
-                                    <h4>{{ $company->name }}</h4>
-                                    <h5>{{ $company->email }}</h5>
                                 </div>
                             @endforeach
                             </div>
@@ -37,7 +35,6 @@
                                 <div class="border-bottom pb-3 my-3">
                                     <img src="https://i.pravatar.cc/60?u={{ $employee->email }}" alt="Avatar" width="60" height="60" class="rounded-circle mb-3">
                                     <h4>{{ "$employee->first_name $employee->last_name" }}</h4>
-                                    <h5>{{ $employee->email }}</h5>
                                 </div>
                                 @endforeach
                             </div>
