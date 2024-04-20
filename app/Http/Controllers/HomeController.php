@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         $companies = Company::limit(3)->get();
-        $employees = Employee::limit(9)->get();
+        $employees = Employee::limit(5)->get();
         return view('home', compact('companies', 'employees'));
     }
 }
