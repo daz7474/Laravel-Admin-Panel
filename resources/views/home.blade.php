@@ -44,8 +44,8 @@
                         @foreach ($companies as $company)
                             <div class="text-center pb-3 m-2">
                                 <a href="{{ route('companies.show', $company) }}">
-                                    <img src="{{ asset('storage/' . $company->logo) }}" width="80" alt="Company Logo" class="rounded mb-4">
-                                    <h4>{{ $company->name }}</h4>
+                                    <img src="{{ asset('storage/' . $company->logo) }}" width="100" alt="Company Logo" class="rounded mb-4">
+                                    <h5>{{ $company->name }}</h5>
                                 </a>
                             </div>
                         @endforeach
@@ -62,7 +62,7 @@
                         @foreach ($employees as $employee)
                             <div class="text-center pb-3 m-2">
                                 <a href="{{ route('employees.show', $employee) }}">
-                                    <img src="https://i.pravatar.cc/80?u={{ $employee->email }}" width="80" alt="Employee Avatar" class="rounded-circle mb-4">
+                                    <img src="https://i.pravatar.cc/80?u={{ $employee->email }}" width="80" height="80" alt="Employee Avatar" class="rounded-circle mb-4">
                                     <h4>{{ $employee->first_name }}</h4>
                                 </a>
                             </div>
