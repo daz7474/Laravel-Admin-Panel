@@ -25,7 +25,7 @@
                     <td>{{ $company->email }}</td>
                     <td><a href="{{ $company->website }}" target="_blank">{{ $company->website }}</a></td>
                     <td>
-                        <img src="{{ asset('storage/' . $company->logo) }}" width="100" height="60" alt="Company Logo" class="rounded my-2">
+                        <img src="{{ asset('storage/' . $company->logo) }}" width="100" height="60" alt="{{ $company->name }}" class="rounded my-2">
                     </td>
                     <td>
                         <a href="{{ route('companies.show', $company) }}" class="btn btn-warning mb-2">View</a>
