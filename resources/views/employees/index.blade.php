@@ -46,7 +46,8 @@
     
     {{-- Pagination links --}}
     <div class="pagination">
-      {!! $employees->links() !!}
+        {!! $employees->links() !!}
     </div>
+      
 </div>
 @endsection
