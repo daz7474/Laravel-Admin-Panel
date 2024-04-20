@@ -45,7 +45,9 @@ class CompanyController extends Controller
      */
     public function show(Company $company)
     {
-        $company->load('employees');
+        $company->load(['employees' => function ($query) {
+            $query->orderBy('first_name', 'asc');
+        }]);
         return view('companies.show', compact('company'));
     }
 
