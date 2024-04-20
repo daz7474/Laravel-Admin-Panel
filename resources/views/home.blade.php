@@ -44,7 +44,7 @@
                         @foreach ($companies as $company)
                             <div class="text-center pb-3 m-2">
                                 <a href="{{ route('companies.show', $company) }}">
-                                    <img src="{{ asset('storage/' . $company->logo) }}" width="100" alt="Company Logo" class="rounded mb-4">
+                                    <img src="{{ asset('storage/' . $company->logo) }}" width="100" alt="{{ $company->name }}" class="rounded mb-4">
                                     <h5>{{ $company->name }}</h5>
                                 </a>
                             </div>
