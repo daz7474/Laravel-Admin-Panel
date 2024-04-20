@@ -32,7 +32,7 @@ class UpdateCompanyRequest extends FormRequest
                 Rule::unique('companies')->ignore($this->company->id)
             ],
             'logo' => 'nullable|image|dimensions:min_width=100,min_height=100',
-            'website' => 'nullable|url',
+            'website' => 'nullable|url|max:255',
         ];
     }
 }
