@@ -27,10 +27,10 @@
                     <td>{{ $employee->phone }}</td>
                     <td><a href="{{ route('companies.show', $employee->company_id) }}">{{ $employee->company->name }}</a></td>
                     <td>
-                        <a href="/employees/{{ $employee->id }}" class="btn btn-warning">View</a>
+                        <a href="/employees/{{ $employee->id }}" class="btn btn-warning mb-2">View</a>
 
                         @admin
-                        <a href="{{ route('employees.edit', $employee) }}" class="btn btn-info">Edit</a>
+                        <a href="{{ route('employees.edit', $employee) }}" class="btn btn-info mb-2">Edit</a>
                         <form action="{{ route('employees.destroy', $employee) }}" method="POST" style="display: inline-block;">
                             @csrf
                             @method('DELETE')

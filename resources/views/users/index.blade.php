@@ -26,7 +26,7 @@
                     <td>{{ $user->role }}</td>
                     <td>
                         @admin
-                        <a href="{{ route('users.edit', $user) }}" class="btn btn-info">Edit</a>
+                        <a href="{{ route('users.edit', $user) }}" class="btn btn-info mb-2">Edit</a>
                         <form action="{{ route('users.destroy', $user) }}" method="POST" style="display: inline-block;">
                             @csrf
                             @method('DELETE')
