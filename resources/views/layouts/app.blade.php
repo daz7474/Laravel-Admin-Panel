@@ -49,7 +49,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item {{ request()->is('users*') ? 'active' : '' }}" href="/users">Users</a>
+                                    @admin
+                                        <a class="dropdown-item {{ request()->is('users*') ? 'active' : '' }}" href="/users">Users</a>
+                                    @endadmin
 
                                     <a class="dropdown-item {{ request()->is('companies*') ? 'active' : '' }}" href="/companies">Companies</a>
 
