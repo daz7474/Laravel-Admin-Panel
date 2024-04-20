@@ -27,7 +27,9 @@
                   <td>{{ $employee->email }}</td>
                   <td>{{ $employee->phone }}</td>
                   <td>
-                    <img src="{{ asset('storage/' . $employee->company->logo) }}" width="100" height="60" alt="{{ $employee->company->name }}" class="rounded my-2">
+                    <a href="/companies/{{ $employee->company->id }}">
+                      {{ $employee->company->name }}
+                    </a>
                   </td>
                   <td>
   
