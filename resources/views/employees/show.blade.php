@@ -4,7 +4,7 @@
 
 <div class="container">
     <h1>Employee Details</h1>
-    <div class="card my-3">
+    <div class="card my-5">
       <div class="card-header">
         <h2 class="m-0">{{ "$employee->first_name $employee->last_name" }}</h2>
       </div>
