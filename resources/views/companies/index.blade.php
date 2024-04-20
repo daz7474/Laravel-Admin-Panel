@@ -26,13 +26,16 @@
                 </td>
                 <td>
                     <a href="{{ route('companies.show', $company) }}" class="btn btn-warning">View</a>
-                    <a href="{{ route('companies.edit', $company) }}" class="btn btn-info">Edit</a>
-                    <form action="{{ route('companies.destroy', $company) }}" method="POST" style="display: inline-block;">
-                        @csrf
-                        @method('DELETE')
-                        
-                        <button type="submit" class="btn btn-danger" onclick="return confirm('This will delete all employees associated with this company, continue?')">Delete</button>
-                    </form>
+
+                    @admin
+                        <a href="{{ route('companies.edit', $company) }}" class="btn btn-info">Edit</a>
+                        <form action="{{ route('companies.destroy', $company) }}" method="POST" style="display: inline-block;">
+                            @csrf
+                            @method('DELETE')
+                            
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('This will delete all employees associated with this company, continue?')">Delete</button>
+                        </form>
+                    @endadmin
                 </td>
             </tr>
             @endforeach
