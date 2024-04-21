@@ -19,7 +19,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($companies as $company)
+                @forelse ($companies as $company)
                 <tr class="align-middle">
                     <td>{{ $company->name }}</td>
                     <td>{{ $company->email }}</td>
@@ -41,7 +41,11 @@
                         @endadmin
                     </td>
                 </tr>
-                @endforeach
+                @empty
+                    <tr>
+                        <td colspan="6" class="text-center">There are no companies to display.</td>
+                    </tr>
+                @endforelse
             </tbody>
         </table>
     </div>
