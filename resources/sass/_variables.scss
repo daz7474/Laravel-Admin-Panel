@@ -5,35 +5,3 @@ $body-bg: #f8fafc;
 $font-family-sans-serif: 'Nunito', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
-
-// Breakpoints
-
-$breakpoints: (
-  'xs': 767px,
-  'sm': 768px,
-  'md': 992px,
-  'lg': 1260px,
-);
-
-// Media queries
-
-@mixin mq($break) {
-  $value: map-get($breakpoints, $break );
-  $sm: map-get($breakpoints, 'sm');
-
-  @if $value ==null {
-    @warn "`#{break}` is not a valid breakpoint name"
-  }
-
-  @else if $value <$sm {
-    @media (max-width: $value) {
-      @content;
-    }
-  }
-
-  @else {
-    @media (min-width: $value) {
-      @content;
-    }
-  }
-}
