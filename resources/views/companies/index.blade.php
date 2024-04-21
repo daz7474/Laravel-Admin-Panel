@@ -43,7 +43,7 @@
                 </tr>
                 @empty
                     <tr>
-                        <td colspan="6" class="text-center">There are no companies to display.</td>
+                        <td colspan="6" class="text-center">There are currently no companies.</td>
                     </tr>
                 @endforelse
             </tbody>
