@@ -40,6 +40,13 @@ Start the Laravel development server:
 php artisan serve
 ```
 
+# Start NPM
+Start NPM to load bootstrap styling:
+
+```bash
+npm run dev
+```
+
 # Access the Application
 Navigate to `http://localhost:8000` to access the Laravel Company Admin Panel.
 
