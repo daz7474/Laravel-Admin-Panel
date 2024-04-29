@@ -14,13 +14,11 @@ class CompanyController extends Controller
      */
     public function index(Request $request)
     {
-        $query = Company::query();
+        $search = $request->input('search');
 
-        if ($request->has('search') && $request->search != '') {
-            $query->where('name', 'like', '%' . $request->search . '%');
-        }
-
-        $companies = $query->paginate(10);
+        $companies = Company::when($search, function ($query, $search) {
+            return $query->where('name', 'like', '%' . $search . '%');
+        })->orderBy('name', 'asc')->paginate(10);
 
         return view('companies.index', compact('companies'));
     }
