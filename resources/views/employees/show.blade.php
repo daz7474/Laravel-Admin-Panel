@@ -4,7 +4,7 @@
 
 <div class="container">
     <h1 class="text-center">Employee Details</h1>
-    <div class="card my-4 mx-auto" style="width: 260px;">
+    <div class="card my-4 mx-auto" style="min-width: 260px; max-width: 500px;">
       <div class="card-header">
         <h2 class="text-center m-0">{{ "$employee->first_name $employee->last_name" }}</h2>
       </div>
@@ -19,7 +19,8 @@
         <h4>Company:</h4>
         <p>
           <a href="/companies/{{ $employee->company->id }}">
-            {{ $employee->company->name }}
+            <p>{{ $employee->company->name }}</p>
+            <img src="{{ asset('storage/' . $employee->company->logo) }}" width="150" alt="{{ $employee->company->name }} logo" class="rounded">
           </a>
         </p>
 

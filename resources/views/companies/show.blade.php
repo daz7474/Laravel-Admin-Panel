@@ -21,7 +21,7 @@
         </thead>
         <tbody>
           <tr class="align-middle">
-              <td><img src="{{ asset('storage/' . $company->logo) }}" width="150" alt="{{ $company->name }}" class="rounded my-2"></td>
+              <td><img src="{{ asset('storage/' . $company->logo) }}" width="150" alt="{{ $company->name }} logo" class="rounded my-2"></td>
               <td>{{ $company->email }}</td>
               <td><a href="{{ $company->website }}" target="_blank">{{ $company->website }}</a></td>
               <td>
