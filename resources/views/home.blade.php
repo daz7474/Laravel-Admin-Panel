@@ -15,9 +15,11 @@
 
                 <div class="card-body card-body-custom">
                     <div class="card-container">
+                        @admin
                         <a class="btn btn-primary p-3 m-2" href="/users">
                             View All Users
                         </a>
+                        @endadmin
 
                         <a class="btn btn-primary p-3 m-2" href="/companies">
                             View All Companies
