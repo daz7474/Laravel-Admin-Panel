@@ -12,9 +12,16 @@ class CompanyController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $companies = Company::orderBy('name')->paginate(10);
+        $query = Company::query();
+
+        if ($request->has('search') && $request->search != '') {
+            $query->where('name', 'like', '%' . $request->search . '%');
+        }
+
+        $companies = $query->paginate(10);
+
         return view('companies.index', compact('companies'));
     }
 

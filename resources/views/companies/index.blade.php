@@ -4,9 +4,18 @@
 
 <div class="container">
     <h1>Companies</h1>
+    
     @admin
     <a href="{{ route('companies.create') }}" class="btn btn-primary my-4">+ Add New Company</a>
     @endadmin
+
+    <form action="{{ route('companies.index') }}" method="GET">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search for a company..." name="search" value="{{ request('search') }}">
+            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+        </div>
+    </form>
+
     <div class="table-responsive">
         <table class="table">
             <thead>
