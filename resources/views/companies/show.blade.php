@@ -3,9 +3,10 @@
 @section('content')
 
 <div class="container">
-  <div class="card">
+  <h1>Company Details</h1>
+  <div class="card my-4">
     <div class="card-header">
-      <h1 class="m-0">{{ $company->name }}</h1>
+      <h2 class="m-0">{{ $company->name }}</h2>
     </div>
 
     <div class="table-responsive">
