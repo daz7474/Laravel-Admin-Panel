@@ -12,9 +12,14 @@ class EmployeeController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $employees = Employee::orderBy('first_name')->paginate(10);
+        $search = $request->input('search');
+
+        $employees = Employee::when($search, function ($query, $search) {
+            return $query->where('first_name', 'like', '%' . $search . '%')->orWhere('last_name', 'like', '%' . $search . '%');
+        })->orderBy('first_name', 'asc')->paginate(10);
+
         return view('employees.index', compact('employees'));
     }
 
