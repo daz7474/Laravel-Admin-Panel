@@ -11,7 +11,9 @@
     <form action="{{ route('companies.index') }}" method="GET">
         <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Search for a company..." name="search" value="{{ request('search') }}">
-            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+            <button class="btn btn-outline-secondary" type="submit">
+                Search
+            </button>
         </div>
     </form>
 
