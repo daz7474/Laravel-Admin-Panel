@@ -23,7 +23,11 @@
                 <tr class="align-middle">
                     <td>{{ $company->name }}</td>
                     <td>{{ $company->email }}</td>
-                    <td><a href="{{ $company->website }}" target="_blank">{{ $company->website }}</a></td>
+                    <td>
+                        <a href="{{ Str::startsWith($company->website, ['http://', 'https://']) ? $company->website : 'http://' . $company->website }}" target="_blank">
+                            {{ $company->website }}
+                        </a>
+                    </td>
                     <td>
                         <img src="{{ asset('storage/' . $company->logo) }}" width="100" height="60" alt="{{ $company->name }}" class="rounded my-2">
                     </td>
