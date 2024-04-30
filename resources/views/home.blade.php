@@ -63,7 +63,7 @@
                             <div class="text-center pb-3 m-2">
                                 <a href="{{ route('employees.show', $employee) }}">
                                     <img src="https://i.pravatar.cc/80?u={{ $employee->email }}" width="80" height="80" alt="Employee Avatar" class="rounded-circle mb-4">
-                                    <h4>{{ "$employee->first_name $employee->last_name" }}</h4>
+                                    <h5>{{ "$employee->first_name $employee->last_name" }}</h5>
                                 </a>
                             </div>
                         @endforeach
