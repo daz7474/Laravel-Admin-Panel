@@ -34,7 +34,7 @@ class UpdateEmployeeRequest extends FormRequest
                 'max:255',
                 Rule::unique('employees')->ignore($this->employee->id)
             ],
-            'phone' => 'nullable|string|max:255',
+            'phone' => ['nullable', 'regex:/^(\d[- ]?){5,10}\d$/'],
         ];
     }
 }

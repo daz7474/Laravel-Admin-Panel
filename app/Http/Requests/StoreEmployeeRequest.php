@@ -27,7 +27,7 @@ class StoreEmployeeRequest extends FormRequest
             'last_name' => 'required|string|max:255',
             'company_id' => 'required|exists:companies,id',
             'email' => 'nullable|string|email|max:255|unique:employees',
-            'phone' => 'nullable|string|max:255',
+            'phone' => ['nullable', 'regex:/^(\d[- ]?){5,10}\d$/'],
         ];
     }
 }
