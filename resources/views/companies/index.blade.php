@@ -42,7 +42,11 @@
                             </a>
                         </td>
                         <td>
-                            <img src="{{ asset('storage/' . $company->logo) }}" width="100" height="60" alt="{{ $company->name }} logo" class="rounded my-2">
+                        @if($company->logo)
+                            <img src="{{ asset('storage/' . $company->logo) }}" width="150" height="100" alt="{{ $company->name }} logo" class="rounded my-2">
+                        @else
+                            <img src="{{ asset('storage/logos/DWLPc2VHeWQLD1aPOThJuuGlYZpybRIEyHopSoY6.png') }}" width="150" height="100" alt="Default logo" class="rounded my-2">
+                        @endif
                         </td>
                         <td>
                             <a href="{{ route('companies.show', $company) }}" class="btn btn-warning mb-2">View</a>

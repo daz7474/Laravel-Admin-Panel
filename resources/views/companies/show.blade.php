@@ -21,7 +21,13 @@
         </thead>
         <tbody>
           <tr class="align-middle">
-              <td><img src="{{ asset('storage/' . $company->logo) }}" width="150" height="100" alt="{{ $company->name }} logo" class="rounded my-2"></td>
+              <td>
+                @if($company->logo)
+                    <img src="{{ asset('storage/' . $company->logo) }}" width="150" height="100" alt="{{ $company->name }} logo" class="rounded my-2">
+                @else
+                    <img src="{{ asset('storage/logos/DWLPc2VHeWQLD1aPOThJuuGlYZpybRIEyHopSoY6.png') }}" width="150" height="100" alt="Default logo" class="rounded my-2">
+                @endif
+              </td>
               <td>{{ $company->email }}</td>
               <td><a href="{{ $company->website }}" target="_blank">{{ $company->website }}</a></td>
               <td>
