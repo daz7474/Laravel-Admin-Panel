@@ -37,7 +37,7 @@
                         <td>{{ $company->name }}</td>
                         <td>{{ $company->email }}</td>
                         <td>
-                            <a href="{{ Str::startsWith($company->website, ['http://', 'https://']) ? $company->website : 'http://' . $company->website }}" target="_blank">
+                            <a href="{{ $company->website }}" target="_blank">
                                 {{ $company->website }}
                             </a>
                         </td>
